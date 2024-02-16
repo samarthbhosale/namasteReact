@@ -1,0 +1,32 @@
+{
+  "name": "basicreact",
+  "version": "1.0.0",
+  "description": "my first ignition",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samarthbhosale/namasteReact.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "samarth bhosale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samarthbhosale/namasteReact/issues"
+  },
+  "homepage": "https://github.com/samarthbhosale/namasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 10 versions"
+  ]
+}
