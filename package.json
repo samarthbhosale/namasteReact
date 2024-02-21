@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "my first ignition",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
