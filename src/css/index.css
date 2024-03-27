@@ -66,3 +66,42 @@
     background-color: #ccc; 
     padding: 5px; 
 } */
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .center {
+        width: 80%;
+    }
+
+    .nav-items > ul > li {
+        font-size: 20px;
+    }
+
+    .restaurant-card {
+        width: 100%;
+    }
+
+    .rest-card-image {
+        height: 100px;
+        width: 100%;
+    }
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        padding-left: 0;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 10px;
+    }
+
+    .nav-items > ul > li {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+}
