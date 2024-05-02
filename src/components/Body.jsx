@@ -4,13 +4,16 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer"
 
 const Body = () => {
-    const [restaurantList, setRestaurantList] = useState(liveData);
+    // const [restaurantList, setRestaurantList] = useState(liveData);
+    // const [filteredrestaurantList, setFilteredRestaurantList] = useState(liveData);
+    const [restaurantList, setRestaurantList] = useState([]);
+    const [filteredrestaurantList, setFilteredRestaurantList] = useState([]);
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
         // console.log("useEffect Hook Called and rendered!");
 
-        // fetchData();
+        fetchData();
     }, []);
 
     const fetchData = async () => {
@@ -18,7 +21,11 @@ const Body = () => {
 
         const json = await myData.json();
         
-        console.log(json.data.cards[2].data.data.card);
+        console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+        // getting dynamic restaurant data through swiggys API and rendering
+        setRestaurantList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurantList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     // Shimmer UI /  Conditional Rendering
@@ -46,8 +53,8 @@ const Body = () => {
                 }}></input>
                     <button onClick={() => {
                         console.log(searchText);
-                        let searchedData = restaurantList.filter(ele => ele.info.name.includes(searchText));
-                        setRestaurantList(searchedData);
+                        let searchedData = restaurantList.filter(ele => ele.info.name.toLowerCase().includes(searchText.toLocaleLowerCase()));
+                        setFilteredRestaurantList(searchedData);
                     }}>Search</button>
                 </div>
             <div className="restaurant-container">
@@ -56,7 +63,7 @@ const Body = () => {
                 cuisin="Chinease,Nort Indian"/> */}
                 
                 {/* setLiveData(liveData); */}
-                {restaurantList.map(ele  => (
+                {filteredrestaurantList.map(ele  => (
                     <RestaurantCard key={ele.info.id} myData={ele}/>
                 ))}
 
