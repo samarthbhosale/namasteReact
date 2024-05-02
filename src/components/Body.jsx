@@ -20,7 +20,7 @@ const Body = () => {
         console.log(json.data.cards[2].data.data.card);
     }
 
-    // Shimmer UI
+    // Shimmer UI /  Conditional Rendering
     if(restaurantList === 0){
         return <Shimmer></Shimmer>;
     }

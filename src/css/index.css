@@ -115,3 +115,8 @@
     margin:20px;
     background-color: #f0f0f0;
 }
+
+.loginbutton {
+    height: 60px;
+    width: 100px;
+}
