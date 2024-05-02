@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer"
 
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState(liveData);
+    const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
         // console.log("useEffect Hook Called and rendered!");
@@ -40,8 +41,14 @@ const Body = () => {
                     // ));
                     // console.log(liveData);
                 }}>Filter</button>
-                <input type="text"></input>
-                    <button>Search</button>
+                <input type="text" value={searchText} onChange={(e) => {
+                    setSearchText(e.target.value);
+                }}></input>
+                    <button onClick={() => {
+                        console.log(searchText);
+                        let searchedData = restaurantList.filter(ele => ele.info.name.includes(searchText));
+                        setRestaurantList(searchedData);
+                    }}>Search</button>
                 </div>
             <div className="restaurant-container">
                 {/* <RestaurantCard
